@@ -8,6 +8,7 @@ const Button = props => {
   return (
     <TouchableOpacity
       onPress={() => {
+        props.onButtonClicked();
         console.log('button clicked');
       }}>
       <View style={[styles.vue, props.style, {backgroundColor: props.bgColor}]}>
@@ -24,6 +25,7 @@ Button.propTypes = {
   children: PropTypes.string.isRequired,
   bgColor: PropTypes.string,
   color: PropTypes.string,
+  onButtonClicked: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {
