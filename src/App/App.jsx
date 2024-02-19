@@ -9,7 +9,9 @@ function App() {
       <Text>DEMAT Breizh</Text>
       <Button bgColor="green">button1</Button>
       <Button bgColor="tomato">Button 2</Button>
-      <Button style={{width: '45%'}}>Button 3</Button>
+      <Button style={{width: '45%'}} color="grey">
+        Button 3
+      </Button>
       <Button style={{width: '45%'}} bgColor="red">
         fghuiolmlkj
       </Button>
