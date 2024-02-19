@@ -8,7 +8,13 @@ const Button = props => {
       onPress={() => {
         console.log('button clicked');
       }}>
-      <View>
+      <View
+        style={{
+          padding: 10,
+          backgroundColor: 'skyblue',
+          alignItems: 'center',
+          margin: 3,
+        }}>
         <Text>{props.children}</Text>
       </View>
     </TouchableOpacity>
