@@ -5,7 +5,7 @@ const Button = props => {
   console.log(props);
   return (
     <View>
-      <Text>{props.text}</Text>
+      <Text>{props.children}</Text>
     </View>
   );
 };

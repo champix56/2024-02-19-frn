@@ -7,10 +7,11 @@ function App() {
     <View>
       {/*comment*/}
       <Text>DEMAT Breizh</Text>
-      <Button text="button1" />
-      <Button text="fdfvscd" />
-      <Button text="button3" />
-      <Button />
+      <Button>button1</Button>
+      <Button>Button 2</Button>
+      <Button>Button 3</Button>
+      <Button>fghuiolmlkj</Button>
+      <Button children="ghjkl" />
     </View>
   );
 }
