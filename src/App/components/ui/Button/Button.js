@@ -23,6 +23,11 @@ Button.propTypes = {
   style: PropTypes.object,
   children: PropTypes.string.isRequired,
   bgColor: PropTypes.string,
-  color: PropTypes.string.isRequired,
+  color: PropTypes.string,
+};
+
+Button.defaultProps = {
+  bgColor: 'skyblue',
+  color: 'white',
 };
 export default Button;
