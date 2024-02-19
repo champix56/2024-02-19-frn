@@ -1,12 +1,17 @@
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity, TouchableHighlight} from 'react-native';
 import React from 'react';
 
 const Button = props => {
   console.log(props);
   return (
-    <View>
+    <TouchableHighlight
+      onPress={() => {
+        console.log('button clicked');
+      }}>
+      {/* <View> */}
       <Text>{props.children}</Text>
-    </View>
+      {/* </View> */}
+    </TouchableHighlight>
   );
 };
 
