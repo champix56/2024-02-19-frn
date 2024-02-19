@@ -8,7 +8,7 @@ const Button = props => {
       onPress={() => {
         console.log('button clicked');
       }}>
-      <View style={styles.vue}>
+      <View style={[styles.vue, {backgroundColor: props.bgColor}]}>
         <Text style={styles.text}>{props.children}</Text>
       </View>
     </TouchableOpacity>
