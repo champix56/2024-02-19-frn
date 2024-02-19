@@ -1,4 +1,4 @@
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import React from 'react';
 
 const Button = props => {
@@ -8,27 +8,28 @@ const Button = props => {
       onPress={() => {
         console.log('button clicked');
       }}>
-      <View
-        style={{
-          padding: 10,
-          backgroundColor: 'skyblue',
-          alignItems: 'center',
-          margin: 3,
-        }}>
-        <Text
-          style={{
-            fontWeight: '900',
-            textDecorationColor: 'white',
-            textDecorationStyle: 'solid',
-            textDecorationLine: 'underline',
-            color: 'white',
-            fontSize: 24,
-          }}>
-          {props.children}
-        </Text>
+      <View style={styles.vue}>
+        <Text style={styles.text}>{props.children}</Text>
       </View>
     </TouchableOpacity>
   );
 };
+
+const styles = StyleSheet.create({
+  vue: {
+    padding: 10,
+    backgroundColor: 'skyblue',
+    alignItems: 'center',
+    margin: 3,
+  },
+  text: {
+    fontWeight: '900',
+    textDecorationColor: 'white',
+    textDecorationStyle: 'solid',
+    textDecorationLine: 'underline',
+    color: 'white',
+    fontSize: 24,
+  },
+});
 
 export default Button;
