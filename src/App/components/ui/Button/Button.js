@@ -15,7 +15,17 @@ const Button = props => {
           alignItems: 'center',
           margin: 3,
         }}>
-        <Text>{props.children}</Text>
+        <Text
+          style={{
+            fontWeight: '900',
+            textDecorationColor: 'white',
+            textDecorationStyle: 'solid',
+            textDecorationLine: 'underline',
+            color: 'white',
+            fontSize: 24,
+          }}>
+          {props.children}
+        </Text>
       </View>
     </TouchableOpacity>
   );
