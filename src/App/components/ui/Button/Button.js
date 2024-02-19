@@ -1,6 +1,8 @@
 import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import styles from './Button.styles';
+import PropTypes from 'prop-types';
+
 const Button = props => {
   console.log(props);
   return (
@@ -17,4 +19,10 @@ const Button = props => {
   );
 };
 
+Button.propTypes = {
+  style: PropTypes.object,
+  children: PropTypes.string.isRequired,
+  bgColor: PropTypes.string,
+  color: PropTypes.string.isRequired,
+};
 export default Button;
