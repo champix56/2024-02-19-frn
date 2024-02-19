@@ -1,6 +1,6 @@
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import React from 'react';
-
+import styles from './Button.styles';
 const Button = props => {
   console.log(props);
   return (
@@ -14,22 +14,5 @@ const Button = props => {
     </TouchableOpacity>
   );
 };
-
-const styles = StyleSheet.create({
-  vue: {
-    padding: 10,
-    backgroundColor: 'skyblue',
-    alignItems: 'center',
-    margin: 3,
-  },
-  text: {
-    fontWeight: '900',
-    textDecorationColor: 'white',
-    textDecorationStyle: 'solid',
-    textDecorationLine: 'underline',
-    color: 'white',
-    fontSize: 24,
-  },
-});
 
 export default Button;
