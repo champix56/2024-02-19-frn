@@ -3,6 +3,7 @@ import {View, Text} from 'react-native';
 function App() {
   return (
     <View>
+      {/*comment*/}
       <Text>DEMAT Breizh</Text>
     </View>
   );
