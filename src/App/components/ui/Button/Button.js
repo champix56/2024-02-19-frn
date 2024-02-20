@@ -5,6 +5,17 @@ import PropTypes from 'prop-types';
 
 const Button = props => {
   console.log(props);
+  const getChildren = () => {
+    if (typeof props.children === 'string') {
+      return (
+        <Text style={[styles.text, {color: props.color}]}>
+          {props.children}
+        </Text>
+      );
+    } else {
+      return props.children;
+    }
+  };
   return (
     <TouchableOpacity
       onPress={() => {
@@ -12,13 +23,7 @@ const Button = props => {
         console.log('button clicked');
       }}>
       <View style={[styles.vue, props.style, {backgroundColor: props.bgColor}]}>
-        {typeof props.children === 'string' ? (
-          <Text style={[styles.text, {color: props.color}]}>
-            {props.children}
-          </Text>
-        ) : (
-          props.children
-        )}
+        {getChildren()}
       </View>
     </TouchableOpacity>
   );
