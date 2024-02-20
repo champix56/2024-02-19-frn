@@ -1,15 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View} from 'react-native';
-import styles from './App.styles';
-import {cars} from '../../db/db.json';
-import FiltrableCarList from './components/ui/FiltrableCarList/FiltrableCarList';
-const initialState = cars;
+import {store} from './store/store';
+import FiltrableCarList from './components/ui/FiltrableCarList/FiltrableCarList.connect';
+import {Provider} from 'react-redux';
 function App() {
-  const [cars, setCars] = useState(initialState);
+  console.log(store);
   return (
-    <View>
-      <FiltrableCarList cars={cars} />
-    </View>
+    <Provider store={store}>
+      <View>
+        <FiltrableCarList />
+      </View>
+    </Provider>
   );
 }
 
