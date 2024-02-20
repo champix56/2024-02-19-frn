@@ -1,27 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, LogBox, ToastAndroid} from 'react-native';
 import Button from './components/ui/Button/Button';
 
 function App() {
+  let counter = 1;
   return (
     <View>
       {/*comment*/}
-      <Text>DEMAT Breizh</Text>
+      <Text>Etat de counter : {counter}</Text>
       <Button
         onButtonClicked={arg => {
           ToastAndroid.show('button clicked depuis App', ToastAndroid.LONG);
         }}
         bgColor="green">
-        button1
+        Ajouter 1
       </Button>
-      <Button bgColor="tomato">Button 2</Button>
-      <Button style={{width: '45%'}} color="yellow">
-        Button 3
-      </Button>
-      <Button style={{width: '45%'}} bgColor="red">
-        fghuiolmlkj
-      </Button>
-      <Button children="ghjkl" />
+      <Button bgColor="tomato">Soustraire 1</Button>
     </View>
   );
 }
