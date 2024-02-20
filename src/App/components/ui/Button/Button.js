@@ -5,6 +5,11 @@ import PropTypes from 'prop-types';
 
 const Button = props => {
   console.log(props);
+
+  /**
+   * construction conditionnel du contennu enfant (avec ou sans <Text>)
+   * @returns {React.ReactNode} noeuds enfants assemblés
+   */
   const getChildren = () => {
     if (typeof props.children === 'string') {
       return (
