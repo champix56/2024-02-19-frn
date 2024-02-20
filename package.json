@@ -9,7 +9,8 @@
     "start": "react-native start",
     "test": "jest",
     "gen_ui": "npx generate-react-cli c --type=ui",
-    "gen_generiquefunc": "npx generate-react-cli c"
+    "gen_generiquefunc": "npx generate-react-cli c",
+    "gen_page": "npx generate-react-cli c --type=pages"
   },
   "dependencies": {
     "react": "18.2.0",
