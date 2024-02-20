@@ -1,11 +1,13 @@
 import {Image, Text, TouchableHighlight, View} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styles from './CarListViewer.styles';
 import PropTypes from 'prop-types';
-const initialState = true;
 const CarListViewer = props => {
   return (
-    <TouchableHighlight onPress={() => {}}>
+    <TouchableHighlight
+      onPress={() => {
+        props.onPress(props.car);
+      }}>
       <View style={styles.CarListViewer} testID="CarListViewer">
         <View style={styles.left} testID="CarListViewer">
           <Image
@@ -32,6 +34,9 @@ const CarListViewer = props => {
     </TouchableHighlight>
   );
 };
-CarListViewer.propTypes = {};
+CarListViewer.propTypes = {
+  car: PropTypes.object.isRequired,
+  onPress: PropTypes.func.isRequired,
+};
 CarListViewer.defaultProps = {};
 export default CarListViewer;
