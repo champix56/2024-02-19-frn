@@ -1,10 +1,17 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, ToastAndroid, Image} from 'react-native';
 import Button from './components/ui/Button/Button';
 import styles from './App.styles';
 import buttonStyles from './components/ui/Button/Button.styles';
 function App() {
   const [counter, setCounter] = useState(1);
+  useEffect(() => {
+    //mount & update
+    console.log('dans le useEffect', counter);
+    return () => {
+      //destruction de la valeur
+    };
+  }, [counter]);
   return (
     <View>
       {/*comment*/}
