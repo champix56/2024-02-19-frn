@@ -37,6 +37,17 @@
         "test": "grc_templates/TemplateName.test.js",
         "lazy": "grc_templates/readme.md"
       }
+    },
+    "storeSlice": {
+      "path": "src/App/store/slices",
+      "withStyle": true,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": true,
+      "customTemplates": {
+        "component": "grc_templates/storeSlice/templateName.js",
+        "lazy": "grc_templates/storeSlice/readme.md"
+      }
     }
   }
 }
