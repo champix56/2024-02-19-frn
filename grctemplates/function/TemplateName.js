@@ -9,7 +9,7 @@ const TemplateName = props => {
     return () => {};
   }, [state]);
   return (
-    <View style={styles.TemplateName}>
+    <View style={styles.TemplateName} testID="TemplateName">
       <Text>TemplateName{JSON.stringify(props)}</Text>
     </View>
   );
