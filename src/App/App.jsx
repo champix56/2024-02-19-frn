@@ -8,10 +8,17 @@ function App() {
   useEffect(() => {
     //mount & update
     console.log('dans le useEffect', counter);
-    return () => {
+    /*return () => {
       //destruction de la valeur
-    };
+    };*/
   }, [counter]);
+  useEffect(() => {
+    //componentDidMount
+    setCounter(0);
+    return () => {
+      //willUnmount
+    };
+  }, []);
   return (
     <View>
       {/*comment*/}
