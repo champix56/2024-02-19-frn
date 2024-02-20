@@ -1,4 +1,4 @@
-import {Text, TextInput, View} from 'react-native';
+import {ScrollView, Text, TextInput, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import styles from './FiltrableCarList.styles';
 import PropTypes from 'prop-types';
@@ -22,10 +22,14 @@ const FiltrableCarList = props => {
           margin: 5,
         }}
       />
-      <View>
-        {props.cars.map((c, i) => (
-          <CarListViewer car={c} key={`c${i}`} onPress={() => {}} />
-        ))}
+      <View style={{height: 400}}>
+        <ScrollView>
+          {props.cars
+            .filter(e => e.model.toLowerCase().includes(state.toLowerCase()))
+            .map((c, i) => (
+              <CarListViewer car={c} key={`c${i}`} onPress={() => {}} />
+            ))}
+        </ScrollView>
       </View>
     </View>
   );
