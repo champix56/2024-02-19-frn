@@ -38,6 +38,19 @@
         "lazy": "grc_templates/readme.md"
       }
     },
+    "layoutfunc": {
+      "path": "src/App/components/layout",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": false,
+      "withLazy": true,
+      "customTemplates": {
+        "component": "grc_templates/layoutFunc/TemplateName.js",
+        "style": "grc_templates/TemplateName.styles.js",
+        "test": "grc_templates/TemplateName.test.js",
+        "lazy": "grc_templates/readme.md"
+      }
+    },
     "storeSlice": {
       "path": "src/App/store/slices",
       "withStyle": true,
