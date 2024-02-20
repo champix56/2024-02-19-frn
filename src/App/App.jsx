@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, LogBox, ToastAndroid} from 'react-native';
+import {View, Text, LogBox, ToastAndroid, Image} from 'react-native';
 import Button from './components/ui/Button/Button';
 
 function App() {
@@ -16,7 +16,8 @@ function App() {
       </Button>
       <Button bgColor="tomato">Button 2</Button>
       <Button style={{width: '45%'}} color="yellow">
-        Button 3
+        <Image source={{uri: ''}} />
+        <Text>hdgdg</Text>
       </Button>
       <Button style={{width: '45%'}} bgColor="red">
         fghuiolmlkj

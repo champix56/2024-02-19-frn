@@ -12,17 +12,23 @@ const Button = props => {
         console.log('button clicked');
       }}>
       <View style={[styles.vue, props.style, {backgroundColor: props.bgColor}]}>
-        <Text style={[styles.text, {color: props.color}]}>
-          {props.children}
-        </Text>
+        {typeof props.children === 'string' ? (
+          <Text style={[styles.text, {color: props.color}]}>
+            {props.children}
+          </Text>
+        ) : (
+          props.children
+        )}
       </View>
     </TouchableOpacity>
   );
 };
-
+//   <Text style={[styles.text, {color: props.color}]}>
+// {props.children}
+// </Text>
 Button.propTypes = {
   style: PropTypes.object,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.any.isRequired,
   bgColor: PropTypes.string,
   color: PropTypes.string,
   onButtonClicked: PropTypes.func.isRequired,
