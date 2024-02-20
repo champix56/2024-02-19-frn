@@ -9,4 +9,4 @@ TEMPLATE_NAME
 template-name
 TemplateName
 templatename
-tempate_name
+template_name
