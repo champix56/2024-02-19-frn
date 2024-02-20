@@ -32,7 +32,7 @@
       }
     },
     "page": {
-      "path": "src/App/components/pages",
+      "path": "src/App/pages",
       "withStyle": true,
       "withTest": true,
       "withStory": false,
