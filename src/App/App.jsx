@@ -15,6 +15,16 @@ function App() {
     //le tableau en 2eme argument de useEffect pointe les references a observer
     //ici seul la valeur counter est observée pour le declenchement
   }, [counter]);
+
+  useEffect(() => {
+    //action de montage du composant car dependance observée -> []
+    // initialisation du composant
+    setCounter(0);
+    return () => {
+      //action de demontage du composant
+    };
+    //array vide donc equiv a component didMount & componentWillUnmount(pour la fonction retourné dans le useEffect)
+  }, []);
   return (
     <View>
       {/*comment*/}
