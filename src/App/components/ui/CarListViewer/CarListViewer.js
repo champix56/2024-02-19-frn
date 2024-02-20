@@ -12,7 +12,7 @@ const CarListViewer = props => {
         <View style={styles.left} testID="CarListViewer">
           <Image
             source={
-              props.car.photo !== undefined
+              props.car.photo !== undefined && props.car.photo !== null
                 ? {uri: props.car.photo}
                 : require('../../../../../assets/img/car.png')
             }
@@ -26,7 +26,8 @@ const CarListViewer = props => {
               ? props.car.id + ':' + props.car.imat
               : props.car.imat}
           </Text>
-          <Text style={styles.titre}>
+          <Text>{props.car.marque + ' ' + props.car.model}</Text>
+          <Text>
             diponible :{props.car.disponible === true ? 'Oui' : 'Non'}
           </Text>
         </View>

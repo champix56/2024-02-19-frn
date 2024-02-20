@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     margin: 5,
   },
-  left: {
+  right: {
     flexGrow: 1,
   },
   image: {
