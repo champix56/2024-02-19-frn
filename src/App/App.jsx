@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, ToastAndroid, Image} from 'react-native';
-import Button from './components/ui/Button/Button';
+import {View, Text} from 'react-native';
 import styles from './App.styles';
-import buttonStyles from './components/ui/Button/Button.styles';
 const initialState = {
   id: 0,
   imat: 'bs-709-gx',
