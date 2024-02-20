@@ -3,6 +3,10 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   CarListViewer: {
     flexDirection: 'row',
+    borderColor: 'grey',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    margin: 5,
   },
   left: {
     flexGrow: 1,
