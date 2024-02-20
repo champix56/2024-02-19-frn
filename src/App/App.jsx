@@ -3,7 +3,7 @@ import {View, Text, LogBox, ToastAndroid} from 'react-native';
 import Button from './components/ui/Button/Button';
 
 function App() {
-  let counter = 1;
+  const [counter, setCounter] = useState(1);
   return (
     <View>
       {/*comment*/}
@@ -11,7 +11,10 @@ function App() {
       <Button
         onButtonClicked={arg => {
           ToastAndroid.show('button clicked depuis App', ToastAndroid.LONG);
-          counter++;
+          // mutation des etats interdits --> counter++;
+          //utilisation du setter
+          setCounter(counter + 1);
+          //décalage de 1 palier car set counter met a jour et rerend le composant de facon async
           console.log(counter);
         }}
         bgColor="green">
@@ -20,7 +23,9 @@ function App() {
       <Button
         onButtonClicked={() => {
           ToastAndroid.show('soustraire 1', 500);
-          counter--;
+          // counter--;
+          setCounter(counter - 1);
+          //retard de 1 sur le log car setCounter async
           console.log(counter);
         }}
         bgColor="tomato">
