@@ -1,19 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, ToastAndroid, Image} from 'react-native';
 import Button from './components/ui/Button/Button';
 import styles from './App.styles';
 import buttonStyles from './components/ui/Button/Button.styles';
 function App() {
+  const [counter, setCounter] = useState(1);
   return (
     <View>
       {/*comment*/}
-      <Text>DEMAT Breizh</Text>
+      <Text style={styles.buttonText}>Valeur de counter : {counter}</Text>
       <Button
         onButtonClicked={arg => {
           ToastAndroid.show(
             'button ajouter clicked depuis App',
             ToastAndroid.LONG,
           );
+          setCounter(counter + 1);
+          console.log(counter);
         }}>
         <Image
           source={require('../../assets/img/plus.png')}
@@ -27,6 +30,8 @@ function App() {
             'button supprimer clicked depuis App',
             ToastAndroid.LONG,
           );
+          setCounter(counter - 1);
+          console.log(counter);
         }}
         bgColor="tomato">
         <View style={styles.buttonView}>
