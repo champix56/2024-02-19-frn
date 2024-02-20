@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, Text, LogBox, ToastAndroid, Image} from 'react-native';
+import {View, Text, ToastAndroid, Image} from 'react-native';
 import Button from './components/ui/Button/Button';
-
+import styles from './App.styles';
+import buttonStyles from './components/ui/Button/Button.styles';
 function App() {
   return (
     <View>
@@ -14,8 +15,11 @@ function App() {
             ToastAndroid.LONG,
           );
         }}>
-         <Image source={require('../../assets/img/plus.png')} style={}/>
-         <Text>Ajouter 1</Text>
+        <Image
+          source={require('../../assets/img/plus.png')}
+          style={styles.buttonImage}
+        />
+        <Text style={styles.buttonText}>Ajouter 1</Text>
       </Button>
       <Button
         onButtonClicked={arg => {
@@ -25,9 +29,12 @@ function App() {
           );
         }}
         bgColor="tomato">
-        <View style={{flexDirection:'row'}}>
-          <Image source={} style={}/>
-          <Text>supprimer 1</Text>
+        <View style={styles.buttonView}>
+          <Image
+            source={require('../../assets/img/minus.png')}
+            style={styles.buttonImage}
+          />
+          <Text style={buttonStyles.text}>supprimer 1</Text>
         </View>
       </Button>
     </View>
