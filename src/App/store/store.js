@@ -1,7 +1,9 @@
-import {configureStore} from '@reduxjs/toolkit';
+import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import carListReducer, {addCar} from './carList';
 
-export const store = configureStore({reducer: carListReducer});
+export const store = configureStore({
+  reducer: combineReducers({cars: carListReducer}),
+});
 store.subscribe(() => {
   console.log('storeUpdated', store.getState());
 });
