@@ -10,7 +10,7 @@
     "test": "jest",
     "gen_ui": "npx generate-react-cli c --type=ui",
     "gen_generiquefunc": "npx generate-react-cli c",
-    "gen_page": "npx generate-react-cli c --type=pages"
+    "gen_page": "npx generate-react-cli c --type=page"
   },
   "dependencies": {
     "react": "18.2.0",
