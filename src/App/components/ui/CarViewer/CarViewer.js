@@ -20,9 +20,14 @@ const CarViewer = props => {
       </View>
       <View style={styles.rightContainer}>
         <Text>{props.car.id}</Text>
-        {props.car.photo !== undefined && (
-          <Image source={{uri: props.car.photo}} style={styles.image} />
-        )}
+        <Image
+          source={
+            props.car.photo !== undefined
+              ? {uri: props.car.photo}
+              : require('../../../../../assets/img/car.png')
+          }
+          style={styles.image}
+        />
       </View>
     </View>
   );
