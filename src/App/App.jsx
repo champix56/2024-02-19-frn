@@ -24,7 +24,12 @@ function App() {
         voiture: {JSON.stringify({...car, photo: undefined})}
       </Text> */}
       <CarViewer car={car} />
-      <CarEditor car={car} />
+      <CarEditor
+        car={car}
+        onSubmit={newCar => {
+          setCar(newCar);
+        }}
+      />
     </View>
   );
 }

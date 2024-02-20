@@ -13,11 +13,13 @@ import PropTypes from 'prop-types';
 import Button from '../../ui/Button/Button';
 const CarEditor = props => {
   const [car, setCar] = useState(props.car);
+
   return (
     <>
       <Button
         onButtonClicked={() => {
           ToastAndroid.show('validation de formulaire', 1000);
+          props.onSubmit(car);
         }}>
         Valider
       </Button>
@@ -53,6 +55,7 @@ const CarEditor = props => {
           <TextInput
             style={[styles.big, styles.price]}
             value={car.prix.toString()}
+            onBlur={evt => {}}
             onChangeText={newStrValue => {
               setCar({...car, prix: parseFloat(newStrValue)});
             }}
@@ -92,6 +95,7 @@ CarEditor.propTypes = {
     disponible: PropTypes.bool.isRequired,
     photo: PropTypes.string,
   }).isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
 CarEditor.defaultProps = {};
 export default CarEditor;
