@@ -11,11 +11,21 @@ function App() {
       <Button
         onButtonClicked={arg => {
           ToastAndroid.show('button clicked depuis App', ToastAndroid.LONG);
+          counter++;
+          console.log(counter);
         }}
         bgColor="green">
         Ajouter 1
       </Button>
-      <Button bgColor="tomato">Soustraire 1</Button>
+      <Button
+        onButtonClicked={() => {
+          ToastAndroid.show('soustraire 1', 500);
+          counter--;
+          console.log(counter);
+        }}
+        bgColor="tomato">
+        Soustraire 1
+      </Button>
     </View>
   );
 }
