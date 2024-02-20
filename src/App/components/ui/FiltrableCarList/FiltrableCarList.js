@@ -24,7 +24,7 @@ const FiltrableCarList = props => {
       />
       <View>
         {props.cars.map((c, i) => (
-          <CarListViewer car={c} />
+          <CarListViewer car={c} key={`c${i}`} onPress={() => {}} />
         ))}
       </View>
     </View>
