@@ -7,7 +7,12 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "gen_ui": "npx generate-react-cli c --type=uifunc",
+    "gen_functionnal": "npx generate-react-cli c --type=functionnalfunc",
+    "gen_layout": "npx generate-react-cli c --type=layoutfunc",
+    "gen_generique": "npx generate-react-cli c",
+    "gen_slice": "npx generate-react-cli c --type=storeSlice"
   },
   "dependencies": {
     "react": "18.2.0",
