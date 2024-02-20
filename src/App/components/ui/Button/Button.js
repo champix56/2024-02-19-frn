@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 const Button = props => {
   console.log(props);
+  //observer le type de children (React.ReactElement | Array<React.ReactElement>)
   return (
     <TouchableOpacity
       onPress={() => {
@@ -12,9 +13,7 @@ const Button = props => {
         console.log('button clicked');
       }}>
       <View style={[styles.vue, props.style, {backgroundColor: props.bgColor}]}>
-        <Text style={[styles.text, {color: props.color}]}>
-          {props.children}
-        </Text>
+        {props.children}
       </View>
     </TouchableOpacity>
   );
@@ -22,7 +21,7 @@ const Button = props => {
 
 Button.propTypes = {
   style: PropTypes.object,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.any.isRequired,
   bgColor: PropTypes.string,
   color: PropTypes.string,
   onButtonClicked: PropTypes.func.isRequired,

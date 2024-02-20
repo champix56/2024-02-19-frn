@@ -1,5 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, LogBox, ToastAndroid} from 'react-native';
+import {
+  View,
+  Text,
+  LogBox,
+  ToastAndroid,
+  Image,
+  StyleSheet,
+} from 'react-native';
 import Button from './components/ui/Button/Button';
 
 function App() {
@@ -39,7 +46,13 @@ function App() {
           console.log(counter);
         }}
         bgColor="green">
-        Ajouter 1
+        <View style={style.buttonView}>
+          <Image
+            style={style.buttonImage}
+            source={require('../../assets/img/plus.png')}
+          />
+          <Text style={style.text}>Ajouter 1</Text>
+        </View>
       </Button>
       <Button
         onButtonClicked={() => {
@@ -50,10 +63,29 @@ function App() {
           console.log(counter);
         }}
         bgColor="tomato">
-        Soustraire 1
+        <Image
+          style={style.buttonImage}
+          source={require('../../assets/img/minus.png')}
+        />
+        <Text style={style.text}>Soustraire 1</Text>
       </Button>
     </View>
   );
 }
-
+const style = StyleSheet.create({
+  text: {
+    fontWeight: '900',
+    textDecorationColor: 'white',
+    textDecorationStyle: 'solid',
+    textDecorationLine: 'underline',
+    color: 'white',
+    fontSize: 24,
+  },
+  buttonImage: {
+    width: 64,
+    height: 64,
+    marginRight: 10,
+  },
+  buttonView: {flexDirection: 'row', alignItems: 'center'},
+});
 export default App;
