@@ -24,6 +24,19 @@
         "test": "grc_templates/TemplateName.test.js",
         "lazy": "grc_templates/readme.md"
       }
+    },
+    "uifunc": {
+      "path": "src/App/components/ui",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": false,
+      "withLazy": true,
+      "customTemplates": {
+        "component": "grc_templates/functionWHook/TemplateName.js",
+        "style": "grc_templates/TemplateName.styles.js",
+        "test": "grc_templates/TemplateName.test.js",
+        "lazy": "grc_templates/readme.md"
+      }
     }
   }
 }
