@@ -4,6 +4,7 @@ import styles from './CarViewer.styles';
 import PropTypes from 'prop-types';
 
 const CarViewer = props => {
+  console.log(props.car);
   return (
     <View style={styles.CarViewer} testID="CarViewer">
       <View style={styles.leftContainer}>
@@ -22,7 +23,7 @@ const CarViewer = props => {
         <Text>{props.car.id}</Text>
         <Image
           source={
-            props.car.photo !== undefined
+            props.car.photo !== undefined && props.car.photo !== null
               ? {uri: props.car.photo}
               : require('../../../../../assets/img/car.png')
           }

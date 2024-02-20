@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderWidth: 1,
     margin: 5,
+    backgroundColor: 'white',
   },
   right: {
     flexGrow: 1,
