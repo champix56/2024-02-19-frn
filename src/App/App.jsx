@@ -17,21 +17,7 @@ const initialState = {
 };
 function App() {
   const [car, setCar] = useState(initialState);
-  return (
-    <View>
-      {/*comment*/}
-      {/* <Text style={styles.buttonText}>
-        voiture: {JSON.stringify({...car, photo: undefined})}
-      </Text> */}
-      <CarViewer car={car} />
-      <CarEditor
-        car={car}
-        onSubmit={newCar => {
-          setCar(newCar);
-        }}
-      />
-    </View>
-  );
+  return <View></View>;
 }
 
 export default App;
