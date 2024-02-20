@@ -3,59 +3,22 @@ import {View, Text, ToastAndroid, Image} from 'react-native';
 import Button from './components/ui/Button/Button';
 import styles from './App.styles';
 import buttonStyles from './components/ui/Button/Button.styles';
+const initialState = {
+  id: 0,
+  imat: 'bs-709-gx',
+  couleur: 'bleu',
+  marque: 'renault',
+  model: 'megane II',
+  photo: undefined,
+  disponible: true,
+  prix: 2000,
+};
 function App() {
-  const [counter, setCounter] = useState(1);
-  useEffect(() => {
-    //mount & update
-    console.log('dans le useEffect', counter);
-    /*return () => {
-      //destruction de la valeur
-    };*/
-  }, [counter]);
-  useEffect(() => {
-    //componentDidMount
-    setCounter(0);
-    return () => {
-      //willUnmount
-    };
-  }, []);
+  const [car, setCar] = useState(initialState);
   return (
     <View>
       {/*comment*/}
-      <Text style={styles.buttonText}>Valeur de counter : {counter}</Text>
-      <Button
-        onButtonClicked={arg => {
-          ToastAndroid.show(
-            'button ajouter clicked depuis App',
-            ToastAndroid.LONG,
-          );
-          setCounter(counter + 1);
-          console.log(counter);
-        }}>
-        <Image
-          source={require('../../assets/img/plus.png')}
-          style={styles.buttonImage}
-        />
-        <Text style={styles.buttonText}>Ajouter 1</Text>
-      </Button>
-      <Button
-        onButtonClicked={arg => {
-          ToastAndroid.show(
-            'button supprimer clicked depuis App',
-            ToastAndroid.LONG,
-          );
-          setCounter(counter - 1);
-          console.log(counter);
-        }}
-        bgColor="tomato">
-        <View style={styles.buttonView}>
-          <Image
-            source={require('../../assets/img/minus.png')}
-            style={styles.buttonImage}
-          />
-          <Text style={buttonStyles.text}>supprimer 1</Text>
-        </View>
-      </Button>
+      <Text style={styles.buttonText}>voiture: {JSON.stringify(car)}</Text>
     </View>
   );
 }
