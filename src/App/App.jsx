@@ -1,12 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {
-  View,
-  Text,
-  LogBox,
-  ToastAndroid,
-  Image,
-  StyleSheet,
-} from 'react-native';
+import {View, Text, ToastAndroid, Image, StyleSheet} from 'react-native';
 import Button from './components/ui/Button/Button';
 
 function App() {
