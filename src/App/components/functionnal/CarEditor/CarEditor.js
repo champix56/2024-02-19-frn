@@ -10,33 +10,62 @@ import {
 import React, {useEffect, useState} from 'react';
 import styles from './CarEditor.styles';
 import PropTypes from 'prop-types';
-const initialState = true;
 const CarEditor = props => {
-  const [state, setState] = useState(initialState);
-  useEffect(() => {
-    return () => {};
-  }, [state]);
+  const [car, setCar] = useState(props.car);
   return (
     <View style={styles.CarEditor} testID="CarEditor">
       <View style={styles.leftContainer}>
-        <TextInput style={styles.big} value={props.car.marque} />
-        <TextInput style={styles.big} value={props.car.model} />
-        <TextInput style={styles.big} value={props.car.imat} />
-        <Text>{'\n'}</Text>
-        <TextInput value={props.car.couleur} />
-        <TextInput style={[styles.big, styles.price]} value={props.car.prix} />€
-        <Text>{'\n'}</Text>
+        <TextInput
+          style={styles.big}
+          value={car.marque}
+          onChangeText={newStrValue => {
+            setCar({...car, marque: newStrValue});
+          }}
+        />
+        <TextInput
+          style={styles.big}
+          value={car.model}
+          onChangeText={newStrValue => {
+            setCar({...car, model: newStrValue});
+          }}
+        />
+        <TextInput
+          style={styles.big}
+          value={car.imat}
+          onChangeText={newStrValue => {
+            setCar({...car, imat: newStrValue});
+          }}
+        />
+        <TextInput
+          value={car.couleur}
+          onChangeText={newStrValue => {
+            setCar({...car, couleur: newStrValue});
+          }}
+        />
+        <TextInput
+          style={[styles.big, styles.price]}
+          value={car.prix.toString()}
+          onChangeText={newStrValue => {
+            setCar({...car, prix: parseFloat(newStrValue)});
+          }}
+        />
         <Text>
-          Disponible : <Switch value={props.car.disponible} />
+          Disponible :
+          <Switch
+            value={car.disponible}
+            onValueChange={newBoolValue => {
+              setCar({...car, disponible: newBoolValue});
+            }}
+          />
         </Text>
       </View>
       <View style={styles.rightContainer}>
-        <Text>{props.car.id}</Text>
+        <Text>{car.id}</Text>
         <TouchableHighlight
           onPress={() => {
             ToastAndroid.show('Change image ask', 1000);
           }}>
-          <Image source={{uri: props.car.photo}} style={styles.image} />
+          <Image source={{uri: car.photo}} style={styles.image} />
         </TouchableHighlight>
       </View>
     </View>

@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderColor: 'black',
-    borderStyle: 'solid',
+    // borderStyle: 'solid',
     borderWidth: 1,
   },
   big: {fontWeight: '900', fontSize: 24},
