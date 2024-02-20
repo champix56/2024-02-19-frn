@@ -9,20 +9,27 @@ function App() {
       <Text>DEMAT Breizh</Text>
       <Button
         onButtonClicked={arg => {
-          ToastAndroid.show('button clicked depuis App', ToastAndroid.LONG);
+          ToastAndroid.show(
+            'button ajouter clicked depuis App',
+            ToastAndroid.LONG,
+          );
+        }}>
+         <Image source={require('../../assets/img/plus.png')} style={}/>
+         <Text>Ajouter 1</Text>
+      </Button>
+      <Button
+        onButtonClicked={arg => {
+          ToastAndroid.show(
+            'button supprimer clicked depuis App',
+            ToastAndroid.LONG,
+          );
         }}
-        bgColor="green">
-        button1
+        bgColor="tomato">
+        <View style={{flexDirection:'row'}}>
+          <Image source={} style={}/>
+          <Text>supprimer 1</Text>
+        </View>
       </Button>
-      <Button bgColor="tomato">Button 2</Button>
-      <Button style={{width: '45%'}} color="yellow">
-        <Image source={{uri: ''}} />
-        <Text>hdgdg</Text>
-      </Button>
-      <Button style={{width: '45%'}} bgColor="red">
-        fghuiolmlkj
-      </Button>
-      <Button children="ghjkl" />
     </View>
   );
 }
