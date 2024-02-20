@@ -42,6 +42,17 @@ const CarEditor = props => {
     </View>
   );
 };
-CarEditor.propTypes = {};
+CarEditor.propTypes = {
+  car: PropTypes.shape({
+    id: PropTypes.number,
+    marque: PropTypes.string.isRequired,
+    model: PropTypes.string.isRequired,
+    imat: PropTypes.string.isRequired,
+    couleur: PropTypes.string.isRequired,
+    prix: PropTypes.number.isRequired,
+    disponible: PropTypes.bool.isRequired,
+    photo: PropTypes.string,
+  }).isRequired,
+};
 CarEditor.defaultProps = {};
 export default CarEditor;
