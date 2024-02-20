@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import styles from './FiltrableCarList.styles';
 import PropTypes from 'prop-types';
 import CarListViewer from '../CarListViewer/CarListViewer';
-const initialState = true;
+const initialState = '';
 const FiltrableCarList = props => {
   const [state, setState] = useState(initialState);
   return (
