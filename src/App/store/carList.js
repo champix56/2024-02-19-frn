@@ -16,13 +16,21 @@ const carList = createSlice({
       state.splice(0);
       state.push(...action.payload);
     });
+    builder.addCase(loadDatas.rejected, (state, action) => {
+      console.log('error loadData', action);
+    });
+    builder.addDefaultCase((s, a) => {
+      console.log('action catched', a);
+    });
   },
 });
 
 export const {addCar} = carList.actions;
 
 export const loadDatas = createAsyncThunk('CarList/loadAll', async () => {
-  const pr = await fetch(`${REST_URL}${RESSOURCES.cars}`);
+  const url = `${REST_URL}${RESSOURCES.cars}`;
+  console.log(url);
+  const pr = await fetch(url);
   return await pr.json();
 });
 
