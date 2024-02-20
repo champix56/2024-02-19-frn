@@ -1,9 +1,20 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, LogBox, ToastAndroid} from 'react-native';
 import Button from './components/ui/Button/Button';
 
 function App() {
   const [counter, setCounter] = useState(1);
+
+  //cycle de vie
+  useEffect(() => {
+    //action en cas de changement/initialisation de valeur de counter
+    console.log('valeur de counter par useEffect', counter);
+    return () => {
+      //action de demontage pour la valeur counter
+    };
+    //le tableau en 2eme argument de useEffect pointe les references a observer
+    //ici seul la valeur counter est observée pour le declenchement
+  }, [counter]);
   return (
     <View>
       {/*comment*/}
