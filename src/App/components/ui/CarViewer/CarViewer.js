@@ -1,4 +1,4 @@
-import {Text, View} from 'react-native';
+import {Image, Text, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import styles from './CarViewer.styles';
 import PropTypes from 'prop-types';
@@ -9,9 +9,24 @@ const CarViewer = props => {
     return () => {};
   }, [state]);
   return (
-    <View style={styles.CarViewer} testID="CarViewer">
-      <Text>CarViewer{JSON.stringify(props)}</Text>
-    </View>
+      <View style={styles.CarViewer} testID="CarViewer">
+        <View style={styles.leftContainer}>
+          <Text style={styles.big}>{props.car.marque}</Text>
+          <Text style={styles.big}>{props.car.model}</Text>
+          <Text style={styles.big}>{props.car.imat}</Text>
+          <Text>{'\n'}</Text>
+          <Text>{props.car.couleur}</Text>
+          <Text style={[styles.big, styles.price]}>{props.car.prix}€</Text>
+          <Text>{'\n'}</Text>
+          <Text>
+            Disponible : {props.car.disponible === true ? 'oui' : 'non'}
+          </Text>
+        </View>
+        <View style={styles.rightContainer}>
+          <Text>{props.car.id}</Text>
+          <Image source={{uri: props.car.photo}} style={styles.image} />
+        </View>
+      </View>
   );
 };
 CarViewer.propTypes = {};
