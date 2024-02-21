@@ -7,7 +7,7 @@ import CarViewer from '../CarViewer/CarViewer';
 const initialState = '';
 const FiltrableCarList = props => {
   const [state, setState] = useState(initialState);
-  const [current, setCurrent] = useState(undefined);
+  //const [current, setCurrent] = useState(undefined);
   return (
     <View style={styles.FiltrableCarList} testID="FiltrableCarList">
       <Text style={{textAlign: 'center', fontSize: 20}}>
