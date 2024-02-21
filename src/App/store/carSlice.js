@@ -31,12 +31,16 @@ const carSlice = createSlice({
     },
   },
   extraReducers(builder) {
+    builder.addCase(loadCars.pending, (state, action) => {
+      console.log('loadData en cours ........');
+      state.cars.push(...action.payload);
+    });
     builder.addCase(loadCars.fulfilled, (state, action) => {
       state.cars.splice(0);
       state.cars.push(...action.payload);
     });
     builder.addDefaultCase((state, action) => {
-      console.log('defaultCase extraReducer', action);
+      console.log('defaultCase extraReducer', state, action);
     });
   },
 });
