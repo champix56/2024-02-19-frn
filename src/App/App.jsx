@@ -11,13 +11,16 @@ function App() {
   const [cars, setCars] = useState(initialState);
   const [current, setCurrent] = useState(undefined);
   console.log(store);
-  useEffect(() => {
-    const pr = fetch('http://localhost:5600/cars').then(r => r.json());
-    pr.then(arr => {
+ /* useEffect(() => {
+    const pr = fetch('http://localhost:5600/cars');
+    const prLu = pr.then(r => {
+      return r.json();
+    });
+    prLu.then(arr => {
       store.dispatch(addCars(arr));
     });
     //store.dispatch(addCars(cars));
-  }, []);
+  }, []);*/
   return (
     <View>
       {current !== undefined && <CarViewer car={current} />}
