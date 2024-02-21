@@ -1,4 +1,5 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+import {store} from './store';
 
 const initialState = {
   cars: [
@@ -29,8 +30,19 @@ const carSlice = createSlice({
       state.cars.push(...action.payload);
     },
   },
+  extraReducers(builder) {
+    // builder.addCase('COUCOU', (s, a) => {
+    //   console.log('coucou catched', a);
+    // });
+    builder.addDefaultCase((state, action) => {
+      console.log('defaultCase extraReducer', action);
+    });
+  },
 });
-
+export const loadCars = createAsyncThunk('ressources/loadData', async () => {
+  const promise = await fetch('http://localhost:5600/cars');
+  return await promise.json();
+});
 export const {addCar, addCars} = carSlice.actions;
 const ressourcesReducer = carSlice.reducer;
 export default ressourcesReducer;
