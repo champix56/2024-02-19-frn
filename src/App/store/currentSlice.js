@@ -19,7 +19,7 @@ const currentSlice = createSlice({
     clear: (s, a) => {
       s.car = undefined;
     },
-    new: (s, a) => {
+    newCurrent: (s, a) => {
       s.car = newCar;
     },
   },
@@ -44,6 +44,6 @@ export const syncCurrent = createAsyncThunk('current/sync', async car => {
   return await pr.json();
 });
 
-export const {set} = currentSlice.actions;
+export const {set, clear, newCurrent} = currentSlice.actions;
 const currentReducer = currentSlice.reducer;
 export default currentReducer;
