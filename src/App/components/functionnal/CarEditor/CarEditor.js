@@ -77,7 +77,14 @@ const CarEditor = props => {
             onPress={() => {
               ToastAndroid.show('Change image ask', 1000);
             }}>
-            <Image source={{uri: car.photo}} style={styles.image} />
+            <Image
+              source={
+                undefined !== car.photo && null !== car.photo
+                  ? {uri: car.photo}
+                  : require('../../../../../assets/img/car.png')
+              }
+              style={styles.image}
+            />
           </TouchableHighlight>
         </View>
       </View>

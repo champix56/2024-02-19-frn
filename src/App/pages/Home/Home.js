@@ -1,11 +1,11 @@
 import {Image, Text, View} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styles from './Home.styles';
 import PropTypes from 'prop-types';
 import Button from '../../components/ui/Button/Button';
 
-const initialState = true;
 const Home = props => {
+  console.log(props);
   return (
     <View style={styles.Home} testID="Home">
       <Text style={styles.titre}>Car lister</Text>
@@ -16,7 +16,11 @@ const Home = props => {
         />
       </View>
       <View style={styles.buttons}>
-        <Button onButtonClicked={() => {}} style={styles.button}>
+        <Button
+          onButtonClicked={() => {
+            props.navigation.navigate('List');
+          }}
+          style={styles.button}>
           <View style={styles.buttonView}>
             <Image
               source={require('../../../../assets/img/list.png')}
@@ -26,7 +30,9 @@ const Home = props => {
           </View>
         </Button>
         <Button
-          onButtonClicked={() => {}}
+          onButtonClicked={() => {
+            props.navigation.navigate('CarEditor');
+          }}
           bgColor="tomato"
           style={styles.button}>
           <View style={styles.buttonView}>

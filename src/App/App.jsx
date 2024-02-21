@@ -1,42 +1,32 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View} from 'react-native';
-import styles from './App.styles';
 import {cars} from '../../db/db.json';
-import FiltrableCarList from './components/ui/FiltrableCarList/FiltrableCarList';
-import CarViewer from './components/ui/CarViewer/CarViewer';
+
 import {store} from './store/store';
-import {addCars} from './store/carSlice';
+
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Home from './pages/Home/Home';
+import List from './pages/List/List';
+import {Text, View} from 'react-native';
+import CarEditor from './components/functionnal/CarEditor/CarEditor';
+import {newCar} from './store/currentSlice';
 const initialState = cars;
 function App() {
   const [cars, setCars] = useState(initialState);
   const [current, setCurrent] = useState(undefined);
   console.log(store);
- /* useEffect(() => {
-    const pr = fetch('http://localhost:5600/cars');
-    const prLu = pr.then(r => {
-      return r.json();
-    });
-    prLu.then(arr => {
-      store.dispatch(addCars(arr));
-    });
-    //store.dispatch(addCars(cars));
-  }, []);*/
-  return (
-    <View>
-      {current !== undefined && <CarViewer car={current} />}
 
-      <FiltrableCarList
-        cars={cars}
-        selectedCar={current}
-        onUpdateSelect={c => {
-          if (current !== undefined && current === c) {
-            setCurrent(undefined);
-          } else {
-            setCurrent(c);
-          }
-        }}
-      />
-    </View>
+  const Stack = createNativeStackNavigator();
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="List" component={List} />
+        <Stack.Screen name="CarEditor">
+          {p => <CarEditor {...p} car={newCar} onSubmit={() => {}} />}
+        </Stack.Screen>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
