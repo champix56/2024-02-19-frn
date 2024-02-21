@@ -30,6 +30,19 @@
         "test": "grctemplates/function/TemplateName.test.js",
         "lazy": "grctemplates/function/readme.md"
       }
+    },
+    "page": {
+      "path": "src/App/pages",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": false,
+      "withLazy": true,
+      "customTemplates": {
+        "component": "grctemplates/function/TemplateName.js",
+        "style": "grctemplates/function/TemplateName.styles.js",
+        "test": "grctemplates/function/TemplateName.test.js",
+        "lazy": "grctemplates/function/readme.md"
+      }
     }
   }
 }

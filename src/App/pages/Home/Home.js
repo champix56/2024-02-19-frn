@@ -4,8 +4,8 @@ import styles from './Home.styles';
 import PropTypes from 'prop-types';
 import Button from '../../components/ui/Button/Button';
 
-const initialState = true;
 const Home = props => {
+  console.log(props);
   return (
     <View style={styles.Home} testID="Home">
       <Text style={styles.titre}>Car lister</Text>
@@ -16,13 +16,17 @@ const Home = props => {
         />
       </View>
       <View style={styles.buttons}>
-        <Button onButtonClicked={() => {}} style={styles.button}>
+        <Button
+          onButtonClicked={() => {
+            props.navigation.navigate('List Voiture');
+          }}
+          style={styles.button}>
           <View style={styles.buttonView}>
             <Image
-              source={require('../../../../assets/img/list.png')}
+              source={require('../../../../assets/img/car.png')}
               style={styles.buttonImage}
             />
-            <Text>Nouveau</Text>
+            <Text>Liste</Text>
           </View>
         </Button>
         <Button

@@ -9,17 +9,22 @@
     "start": "react-native start",
     "test": "jest",
     "gen_ui": "npx generate-react-cli c --type=ui",
+    "gen_page": "npx generate-react-cli c --type=page",
     "gen_generiquefunc": "npx generate-react-cli c",
-    "json0": "json-server -p 5600 --host 0.0.0.0 db/db.json",
-    "json": "json-server -p 5601 --host 0.0.0.0 db/db.json",
-    "adbReverse5600": "adb reverse tcp:5601 tcp:5601",
+    "json0": "json-server -p 5601 --host 0.0.0.0 db/db.json",
+    "json": "json-server -p 5600 --host 0.0.0.0 db/db.json",
+    "adbReverse5600": "adb reverse tcp:5600 tcp:5600",
     "jsonandroid": "npm run adbReverse5600|npm run json"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.1.10",
+    "@react-navigation/native-stack": "^6.9.18",
     "@reduxjs/toolkit": "^2.2.1",
     "json-server": "0.17.4",
     "react": "18.2.0",
     "react-native": "0.73.4",
+    "react-native-safe-area-context": "^4.9.0",
+    "react-native-screens": "^3.29.0",
     "react-redux": "^9.1.0"
   },
   "devDependencies": {
