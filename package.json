@@ -10,8 +10,9 @@
     "test": "jest",
     "gen_ui": "npx generate-react-cli c --type=ui",
     "gen_generiquefunc": "npx generate-react-cli c",
-    "json": "json-server -p 5600 --host 0.0.0.0 db/db.json",
-    "adbReverse5600": "adb reverse tcp:5600 tcp:5600",
+    "json0": "json-server -p 5600 --host 0.0.0.0 db/db.json",
+    "json": "json-server -p 5601 --host 0.0.0.0 db/db.json",
+    "adbReverse5600": "adb reverse tcp:5601 tcp:5601",
     "jsonandroid": "npm run adbReverse5600|npm run json"
   },
   "dependencies": {
