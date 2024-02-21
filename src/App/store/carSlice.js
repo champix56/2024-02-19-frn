@@ -31,9 +31,10 @@ const carSlice = createSlice({
     },
   },
   extraReducers(builder) {
-    // builder.addCase('COUCOU', (s, a) => {
-    //   console.log('coucou catched', a);
-    // });
+    builder.addCase(loadCars.fulfilled, (state, action) => {
+      state.cars.splice(0);
+      state.cars.push(...action.payload);
+    });
     builder.addDefaultCase((state, action) => {
       console.log('defaultCase extraReducer', action);
     });
