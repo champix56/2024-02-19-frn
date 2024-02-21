@@ -10,6 +10,8 @@ function App() {
   const [current, setCurrent] = useState(undefined);
   return (
     <View>
+      {current !== undefined && <CarViewer car={current} />}
+
       <FiltrableCarList
         cars={cars}
         selectedCar={current}
@@ -21,7 +23,6 @@ function App() {
           }
         }}
       />
-      {/* <CarViewer c={current}/> */}
     </View>
   );
 }
