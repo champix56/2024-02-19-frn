@@ -12,7 +12,11 @@ function App() {
   const [current, setCurrent] = useState(undefined);
   console.log(store);
   useEffect(() => {
-    store.dispatch(addCars(cars));
+    const pr = fetch('http://localhost:5600/cars').then(r => r.json());
+    pr.then(arr => {
+      store.dispatch(addCars(arr));
+    });
+    //store.dispatch(addCars(cars));
   }, []);
   return (
     <View>
