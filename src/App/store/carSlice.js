@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import {store} from './store';
-
+import {cars as JSONCARS} from '../../../db/db.json';
 const initialState = {
   cars: [
     {
@@ -39,15 +39,21 @@ const carSlice = createSlice({
       state.cars.splice(0);
       state.cars.push(...action.payload);
     });
+    builder.addCase(loadCars.rejected, (state, action) => {
+      console.log(action.type + ' REJECTED ........');
+      state.cars.splice(0);
+      state.cars.push(...JSONCARS);
+    });
     builder.addDefaultCase((state, action) => {
-      console.log('defaultCase extraReducer', state, action);
+      console.log('defaultCase extraReducer', action.type);
     });
   },
 });
 export const loadCars = createAsyncThunk('ressources/loadData', async () => {
-  const promise = await fetch('http://localhost:5600/cars');
-  return await promise.json();
+  const promise = fetch('http://localhost:5600/cars');
+  return promise.json();
 });
+
 export const {addCar, addCars} = carSlice.actions;
 const ressourcesReducer = carSlice.reducer;
 export default ressourcesReducer;
