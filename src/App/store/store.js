@@ -1,10 +1,11 @@
 import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import ressourcesReducer, {loadCars} from './carSlice';
+import currentReducer from './currentSlice';
 
 export const store = configureStore({
   reducer: combineReducers({
     ressources: ressourcesReducer,
-    // current: currentReducer,
+    current: currentReducer,
   }),
 });
 store.subscribe(() => {
