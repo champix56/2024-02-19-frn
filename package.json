@@ -9,10 +9,14 @@
     "start": "react-native start",
     "test": "jest",
     "gen_ui": "npx generate-react-cli c --type=ui",
-    "gen_generiquefunc": "npx generate-react-cli c"
+    "gen_generiquefunc": "npx generate-react-cli c",
+    "json": "json-server -p 5600 --host 0.0.0.0 db/db.json",
+    "adbReverse5600": "adb reverse tcp:5600 tcp:5600",
+    "jsonandroid": "npm run adbReverse5600|npm run json"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
+    "json-server": "0.17.4",
     "react": "18.2.0",
     "react-native": "0.73.4",
     "react-redux": "^9.1.0"
